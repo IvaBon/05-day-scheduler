@@ -9,6 +9,7 @@ $(document).ready(function(){
         $('#time-display').text(moment().format("MMM DD, YYYY h:mm:ss a"));
     },1000);
 });
+
 //telling browser what time it is
 var timeRN=moment().format('HH')
 console.log(timeRN)
@@ -32,10 +33,10 @@ var saves=[];
 function pullText(){
     if(JSON.parse(localStorage.getItem("text"))){
         saves = JSON.parse(localStorage.getItem("text")); 
-      };
-        
-}  
+    }      
+}  ;
 
+ 
     for(var i =0; i < textHours.length; i++){
         pullText();
      var row=$('<div>').addClass('row time-block');
@@ -52,9 +53,9 @@ function pullText(){
      if (saves[i]){
         text.val(saves[i])
     }
-
+    }
     //  button that pushes to text to local storage
-     button.on("click",function(){
+    button.on("click",function(){
         console.log("click")
         var text= [];
         for(var i=0;i < timeOfDay.length;i++){
@@ -67,7 +68,7 @@ function pullText(){
     })
 
   
-    }
+   
    
    
 
@@ -85,11 +86,10 @@ function checkTime(){
      } else if(timeRN > timeOfDay[i]){
           text.addClass('past');
      } else {
-          text.addClass('present')
+          text.addClass('present');
      }
-    console.log(timeOfDay[i])
-//    }  
-}
+    // console.log(timeOfDay[i])    
+};
 
 
    
